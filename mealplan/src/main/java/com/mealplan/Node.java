@@ -34,8 +34,12 @@ public class Node {
         time = strTime;
     }
 
-    public void setData(String strMeal, String strDay, String strTime) {
-            
+    public void setData(String meal, String day, String time) {
+        this.meal = meal;
+        this.day = day;
+        this.time = time;
     }
+
+    
     
 }
