@@ -1,5 +1,8 @@
 package com.mealplan;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 public class JFrame extends javax.swing.JFrame {
 
     /**
@@ -64,13 +67,10 @@ public class JFrame extends javax.swing.JFrame {
         tableView.setForeground(new java.awt.Color(51, 51, 51));
         tableView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Meal", "Day", "Time"
             }
         ));
         tableView.setGridColor(new java.awt.Color(204, 204, 204));
@@ -283,7 +283,15 @@ public class JFrame extends javax.swing.JFrame {
     }
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        if (inputMeal.getText().equals("") || dropdownDay.equals("") || dropdownTime.equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter all data.");
+        } else {
+            Node n = new Node(inputMeal.getText(), dropdownDay.toString(), dropdownTime.toString());
+
+            DefaultTableModel tblModel =(DefaultTableModel) tableView.getModel();
+            tblModel.addRow();
+        }
     }
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
