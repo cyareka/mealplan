@@ -21,6 +21,9 @@ public class Node {
     private String meal;
     private String day;
     private String time;
+    private Node left;
+    private Node right;
+    private int height;
     
     Node() {
         meal = "";
@@ -40,6 +43,6 @@ public class Node {
         this.time = time;
     }
 
-    
+
     
 }
