@@ -2,12 +2,12 @@ package com.mealplan;
 public class Node {
 
     private String meal;
-    private String day;
+    public String day;
     private String time;
 
-    Node left;
-    Node right;
-    int height;
+    public Node left;
+    public Node right;
+    public int height;
     
     // Default constructor to create null node
     Node() {
