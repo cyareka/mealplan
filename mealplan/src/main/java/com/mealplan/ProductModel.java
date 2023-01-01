@@ -23,8 +23,7 @@ public class ProductModel {
 	}
 
 	public void delete(String meal, String day, String time) {
-		Node root;
-
+		
 
 		if (rootNode == null)
 			return;
