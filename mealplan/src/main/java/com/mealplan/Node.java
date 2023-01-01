@@ -1,48 +1,31 @@
 package com.mealplan;
-
-enum Weekday {
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY,
-    SUNDAY
-}
-
-enum TimeOfDay {
-    MORNING,
-    AFTERNOON,
-    EVENING
-}
-
 public class Node {
 
     private String meal;
     private String day;
     private String time;
-    private Node left;
-    private Node right;
-    private int height;
+
+    Node left;
+    Node right;
+    int height;
     
+    // Default constructor to create null node
     Node() {
         meal = "";
         day = "";
         time = "";
+        left = null;
+        right = null;
+        height = 0;
     }
-    
+
+    // Parameterized constructor
     Node(String strMeal, String strDay, String strTime) {
         meal = strMeal;
         day = strDay;
         time = strTime;
-    }
-
-    public void setData(String meal, String day, String time) {
-        this.meal = meal;
-        this.day = day;
-        this.time = time;
-    }
-
-
-    
+        left = null;
+        right = null;
+        height = 0;
+    }    
 }
