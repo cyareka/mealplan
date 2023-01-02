@@ -2,7 +2,7 @@ package com.mealplan;
 
 import java.util.ArrayList;
 
-// INSERT, DELETE, DISPLAY, EXPORT, NEW WEEK, SEARCH
+// INSERT, DELETE, DISPLAY, NEW WEEK, SEARCH
 
 public class HashTable {
     private ArrayList<Node>[] hashArray;
@@ -80,5 +80,5 @@ public class HashTable {
         }
     }
 
-    
+
 }
