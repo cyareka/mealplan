@@ -26,8 +26,6 @@ public class JFrame extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         labelProject = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableView = new javax.swing.JTable();
         labelMeal = new javax.swing.JLabel();
         labelDay = new javax.swing.JLabel();
         labelTime = new javax.swing.JLabel();
@@ -39,6 +37,8 @@ public class JFrame extends javax.swing.JFrame {
         btnSearch = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
         btnExport = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -61,25 +61,6 @@ public class JFrame extends javax.swing.JFrame {
         labelProject.setFont(new java.awt.Font("Lexend", 0, 30)); // NOI18N
         labelProject.setForeground(new java.awt.Color(0, 0, 0));
         labelProject.setText("Meal Plan System");
-
-        tableView.setBackground(new java.awt.Color(204, 204, 204));
-        tableView.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        tableView.setForeground(new java.awt.Color(51, 51, 51));
-        tableView.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Meal", "Day", "Time"
-            }
-        ));
-        tableView.setGridColor(new java.awt.Color(204, 204, 204));
-        tableView.setSelectionBackground(new java.awt.Color(255, 238, 193));
-        tableView.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        tableView.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tableView.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tableView.setShowGrid(false);
-        jScrollPane1.setViewportView(tableView);
 
         labelMeal.setBackground(new java.awt.Color(255, 255, 255));
         labelMeal.setFont(new java.awt.Font("Lexend", 0, 24)); // NOI18N
@@ -188,6 +169,13 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
+        textArea.setBackground(new java.awt.Color(204, 204, 204));
+        textArea.setColumns(20);
+        textArea.setFont(new java.awt.Font("Lexend", 0, 14)); // NOI18N
+        textArea.setForeground(new java.awt.Color(51, 51, 51));
+        textArea.setRows(5);
+        jScrollPane2.setViewportView(textArea);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -195,11 +183,12 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelProject, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
+                                .addGap(52, 52, 52)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -218,11 +207,10 @@ public class JFrame extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(130, 130, 130)
+                                .addGap(121, 121, 121)
                                 .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(labelProject, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -230,10 +218,9 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(labelProject)
-                .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
+                        .addGap(147, 147, 147)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelMeal)
                             .addComponent(inputMeal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -255,9 +242,9 @@ public class JFrame extends javax.swing.JFrame {
                             .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,7 +277,7 @@ public class JFrame extends javax.swing.JFrame {
             Node n = new Node(inputMeal.getText(), dropdownDay.toString(), dropdownTime.toString());
 
             DefaultTableModel tblModel =(DefaultTableModel) tableView.getModel();
-            tblModel.addRow();
+            tblModel.addRow(inputMeal.getText(), dropdownDay.toString(), dropdownTime.toString());
         }
     }
 
@@ -303,10 +290,6 @@ public class JFrame extends javax.swing.JFrame {
     }
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -359,11 +342,11 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JTextField inputMeal;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelDay;
     private javax.swing.JLabel labelMeal;
     private javax.swing.JLabel labelProject;
     private javax.swing.JLabel labelTime;
-    private javax.swing.JTable tableView;
+    private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
