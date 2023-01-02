@@ -1,12 +1,3 @@
-# Meal Plan System
-### Submitted by:
-Fernandez, Sheardeeh Zurrielle B.
-
-Manlunas, Rea May S.
-
-Tamayo, Inalyn Kim P.
-# Note
-Please install Lexend.zip prior to running the program
 # References
 (delete this file before final submission)
 
