@@ -1,7 +1,6 @@
 package com.mealplan;
 
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 public class JFrame extends javax.swing.JFrame {
 
@@ -12,7 +11,7 @@ public class JFrame extends javax.swing.JFrame {
         initComponents();
     }
 
-    ProductModel pm = new ProductModel();
+    HashTable hashT = new HashTable();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,22 +81,12 @@ public class JFrame extends javax.swing.JFrame {
         dropdownDay.setForeground(new java.awt.Color(51, 51, 51));
         dropdownDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
         dropdownDay.setToolTipText("Select a day");
-        dropdownDay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dropdownDayActionPerformed(evt);
-            }
-        });
 
         dropdownTime.setBackground(new java.awt.Color(255, 255, 255));
         dropdownTime.setFont(new java.awt.Font("Lexend", 0, 18)); // NOI18N
         dropdownTime.setForeground(new java.awt.Color(51, 51, 51));
         dropdownTime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Morning", "Afternoon", "Evening" }));
         dropdownTime.setToolTipText("Select a time");
-        dropdownTime.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dropdownTimeActionPerformed(evt);
-            }
-        });
 
         inputMeal.setBackground(new java.awt.Color(255, 255, 255));
         inputMeal.setFont(new java.awt.Font("Lexend", 0, 18)); // NOI18N
@@ -261,40 +250,32 @@ public class JFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dropdownDayActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void dropdownTimeActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here
         if (inputMeal.getText().equals("") || dropdownDay.equals("") || dropdownTime.equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter all data.");
         } else {
             Node n = new Node(inputMeal.getText(), dropdownDay.toString(), dropdownTime.toString());
 
-            DefaultTableModel tblModel =(DefaultTableModel) tableView.getModel();
-            tblModel.addRow(inputMeal.getText(), dropdownDay.toString(), dropdownTime.toString());
+            hashT.insert(n);
+
+            String displayHT;
         }
     }
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    
     }
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+
     }
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+
     }
 
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+
     }
 
     

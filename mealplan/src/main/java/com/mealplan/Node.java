@@ -4,11 +4,9 @@ public class Node {
     private String meal;
     public String day;
     private String time;
-
-    public Node left;
-    public Node right;
-    public int height;
     
+    public Node left;
+    public Node right;    
     
     // Default constructor to create null node
     Node() {
@@ -17,7 +15,6 @@ public class Node {
         time = "";
         left = null;
         right = null;
-        height = 0;
     }
     
     // Parameterized constructor
@@ -27,7 +24,19 @@ public class Node {
         time = strTime;
         left = null;
         right = null;
-        height = 0;
+    }
+    
+    public String getMeal() {
+        return meal;
+    }
+    
+    public String getDay() {
+        return day;
+    }
+    
+    
+    public String getTime() {
+        return time;
     }
     
     public Node getLeft() {
@@ -37,14 +46,16 @@ public class Node {
     public Node getRight() {
         return right;
     }
-    
-    public int getHeight() {
-        return height;
+
+    public void setDay(String day) {
+        this.day = day;
     }
 
-    public Node getData(Node n) {
-        n = new Node(meal, day, time);
-        return n;
+    public void setTime(String time) {
+        this.time = time;
     }
-    
+
+    public String toString() {
+        return "Meal: " + meal + " Day: " + day + " Time: " + time + "\n"; 
+    }    
 }
