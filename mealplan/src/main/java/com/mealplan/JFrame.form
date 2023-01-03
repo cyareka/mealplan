@@ -70,17 +70,21 @@
                           <Component id="jScrollPane2" min="-2" pref="422" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="labelMeal" min="-2" pref="67" max="-2" attributes="0"/>
-                                      <Component id="labelDay" min="-2" pref="67" max="-2" attributes="0"/>
-                                      <Component id="labelTime" min="-2" pref="67" max="-2" attributes="0"/>
+                                  <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="labelMeal" min="-2" pref="67" max="-2" attributes="0"/>
+                                          <Component id="labelDay" min="-2" pref="67" max="-2" attributes="0"/>
+                                          <Component id="labelTime" min="-2" pref="67" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="labelNumber" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="dropdownDay" max="32767" attributes="0"/>
                                       <Component id="dropdownTime" pref="296" max="32767" attributes="0"/>
                                       <Component id="inputMeal" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="inputNumber" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -94,14 +98,14 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="btnSearch" min="-2" pref="115" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnNew" min="-2" pref="115" max="-2" attributes="0"/>
+                                          <Component id="btnNewWeek" min="-2" pref="115" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="61" max="32767" attributes="0"/>
+                  <EmptySpace pref="36" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -112,7 +116,12 @@
                   <Component id="labelProject" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="inputNumber" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="labelNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelMeal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="inputMeal" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -140,7 +149,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnSearch" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="btnNew" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="btnNewWeek" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -222,14 +231,15 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
-                <StringItem index="0" value="Monday"/>
-                <StringItem index="1" value="Tuesday"/>
-                <StringItem index="2" value="Wednesday"/>
-                <StringItem index="3" value="Thursday"/>
-                <StringItem index="4" value="Friday"/>
-                <StringItem index="5" value="Saturday"/>
-                <StringItem index="6" value="Sunday"/>
+              <StringArray count="8">
+                <StringItem index="0" value="- Select -"/>
+                <StringItem index="1" value="Monday"/>
+                <StringItem index="2" value="Tuesday"/>
+                <StringItem index="3" value="Wednesday"/>
+                <StringItem index="4" value="Thursday"/>
+                <StringItem index="5" value="Friday"/>
+                <StringItem index="6" value="Saturday"/>
+                <StringItem index="7" value="Sunday"/>
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Select a day"/>
@@ -250,10 +260,11 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Morning"/>
-                <StringItem index="1" value="Afternoon"/>
-                <StringItem index="2" value="Evening"/>
+              <StringArray count="4">
+                <StringItem index="0" value="- Select -"/>
+                <StringItem index="1" value="Morning"/>
+                <StringItem index="2" value="Afternoon"/>
+                <StringItem index="3" value="Evening"/>
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Select a time"/>
@@ -342,7 +353,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnNew">
+        <Component class="javax.swing.JButton" name="btnNewWeek">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="68" green="a7" red="ec" type="rgb"/>
@@ -361,7 +372,7 @@
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewWeekActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -388,6 +399,34 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JTextField" name="inputNumber">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lexend" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="33" type="rgb"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Input meal name here"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelNumber">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lexend" size="24" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No."/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

@@ -12,3 +12,5 @@ Please install Lexend.zip prior to running the program
 
 ### ARDE'S
 1. http://www.cse.uaa.alaska.edu/~afkjm/csce311/handouts/Hashing.pdf
+2. https://medium.com/@rajithabhanuka/phonebook-using-hashtable-81840d7b805f
+3. https://www.javatpoint.com/java-hashtable

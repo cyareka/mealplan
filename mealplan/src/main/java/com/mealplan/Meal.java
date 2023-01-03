@@ -1,31 +1,31 @@
 package com.mealplan;
-public class Node {
+public class Meal {
 
+    private int number;
     private String meal;
     public String day;
-    private String time;
-    
-    public Node left;
-    public Node right;    
+    private String time;  
     
     // Default constructor to create null node
-    Node() {
+    Meal() {
+        number = 0;
         meal = "";
         day = "";
         time = "";
-        left = null;
-        right = null;
     }
     
     // Parameterized constructor
-    Node(String strMeal, String strDay, String strTime) {
+    Meal(int intNum, String strMeal, String strDay, String strTime) {
+        number = intNum;
         meal = strMeal;
         day = strDay;
         time = strTime;
-        left = null;
-        right = null;
     }
     
+    public int getNumber() {
+        return number;
+    }
+
     public String getMeal() {
         return meal;
     }
@@ -34,17 +34,12 @@ public class Node {
         return day;
     }
     
-    
     public String getTime() {
         return time;
     }
-    
-    public Node getLeft() {
-        return left;
-    }
-    
-    public Node getRight() {
-        return right;
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public void setDay(String day) {
@@ -55,7 +50,8 @@ public class Node {
         this.time = time;
     }
 
+    @Override
     public String toString() {
-        return "Meal: " + meal + " Day: " + day + " Time: " + time + "\n"; 
+        return " No.: " + number + " | Meal: " + meal + " | Day: " + day + " | Time: " + time; 
     }    
 }

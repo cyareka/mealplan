@@ -1,5 +1,7 @@
 package com.mealplan;
 
+import java.awt.event.ActionEvent;
+
 import javax.swing.JOptionPane;
 
 public class JFrame extends javax.swing.JFrame {
@@ -34,9 +36,11 @@ public class JFrame extends javax.swing.JFrame {
         btnInsert = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
-        btnNew = new javax.swing.JButton();
+        btnNewWeek = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
+        inputNumber = new javax.swing.JTextField();
+        labelNumber = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -78,13 +82,13 @@ public class JFrame extends javax.swing.JFrame {
         dropdownDay.setBackground(new java.awt.Color(255, 255, 255));
         dropdownDay.setFont(new java.awt.Font("Lexend", 0, 18)); // NOI18N
         dropdownDay.setForeground(new java.awt.Color(51, 51, 51));
-        dropdownDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
+        dropdownDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Select -", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
         dropdownDay.setToolTipText("Select a day");
 
         dropdownTime.setBackground(new java.awt.Color(255, 255, 255));
         dropdownTime.setFont(new java.awt.Font("Lexend", 0, 18)); // NOI18N
         dropdownTime.setForeground(new java.awt.Color(51, 51, 51));
-        dropdownTime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Morning", "Afternoon", "Evening" }));
+        dropdownTime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Select -", "Morning", "Afternoon", "Evening" }));
         dropdownTime.setToolTipText("Select a time");
 
         inputMeal.setBackground(new java.awt.Color(255, 255, 255));
@@ -131,16 +135,16 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnNew.setBackground(new java.awt.Color(236, 167, 104));
-        btnNew.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        btnNew.setForeground(new java.awt.Color(255, 255, 255));
-        btnNew.setText("New Week");
-        btnNew.setToolTipText("");
-        btnNew.setBorder(null);
-        btnNew.setBorderPainted(false);
-        btnNew.addActionListener(new java.awt.event.ActionListener() {
+        btnNewWeek.setBackground(new java.awt.Color(236, 167, 104));
+        btnNewWeek.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        btnNewWeek.setForeground(new java.awt.Color(255, 255, 255));
+        btnNewWeek.setText("New Week");
+        btnNewWeek.setToolTipText("");
+        btnNewWeek.setBorder(null);
+        btnNewWeek.setBorderPainted(false);
+        btnNewWeek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewActionPerformed(evt);
+                btnNewWeekActionPerformed(evt);
             }
         });
 
@@ -150,6 +154,16 @@ public class JFrame extends javax.swing.JFrame {
         textArea.setForeground(new java.awt.Color(51, 51, 51));
         textArea.setRows(5);
         jScrollPane2.setViewportView(textArea);
+
+        inputNumber.setBackground(new java.awt.Color(255, 255, 255));
+        inputNumber.setFont(new java.awt.Font("Lexend", 0, 18)); // NOI18N
+        inputNumber.setForeground(new java.awt.Color(51, 51, 51));
+        inputNumber.setToolTipText("Input meal name here");
+
+        labelNumber.setBackground(new java.awt.Color(255, 255, 255));
+        labelNumber.setFont(new java.awt.Font("Lexend", 0, 24)); // NOI18N
+        labelNumber.setForeground(new java.awt.Color(0, 0, 0));
+        labelNumber.setText("No.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -164,15 +178,18 @@ public class JFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelMeal, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelDay, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(labelMeal, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelDay, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(labelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(labelNumber))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(dropdownDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(dropdownTime, 0, 296, Short.MAX_VALUE)
-                                    .addComponent(inputMeal)))
+                                    .addComponent(inputMeal)
+                                    .addComponent(inputNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(121, 121, 121)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,8 +200,8 @@ public class JFrame extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(61, Short.MAX_VALUE))
+                                        .addComponent(btnNewWeek, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +210,11 @@ public class JFrame extends javax.swing.JFrame {
                 .addComponent(labelProject)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
+                        .addGap(96, 96, 96)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNumber))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelMeal)
                             .addComponent(inputMeal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -215,7 +236,7 @@ public class JFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnNewWeek, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -237,27 +258,38 @@ public class JFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {
-        if (inputMeal.getText().equals("") || dropdownDay.equals("") || dropdownTime.equals("")) {
+        int inputNo = Integer.parseInt(inputNumber.getText());
+
+        if (inputNumber.getText().equals("") || inputMeal.getText().equals("") || dropdownDay.getSelectedItem().toString().equals("- Select -") || dropdownTime.getSelectedItem().toString().equals("- Select -")) {
             JOptionPane.showMessageDialog(this, "Please enter all data.");
         } else {
-            Node n = new Node(inputMeal.getText(), dropdownDay.toString(), dropdownTime.toString());
 
-            hashT.insert(n);
+            hashT.insert(inputNo, inputMeal.getText(), dropdownDay.getSelectedItem().toString(), dropdownTime.getSelectedItem().toString());
 
-            String displayHT;
+            textArea.setText("");
+            textArea.append(hashT.display());
+
+            JOptionPane.showMessageDialog(null, "Successfully added item.");
+
+            inputNumber.setText("");
+            inputMeal.setText("");
+            dropdownDay.setSelectedItem("- Select -");
+            dropdownTime.setSelectedItem("- Select -");
         }
     }
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
-    
+        
     }
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {
 
     }
 
-    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnNewWeekActionPerformed(java.awt.event.ActionEvent evt) {
+        hashT.newWeek();
 
+        JOptionPane.showMessageDialog(null, "Let's plan a new week ahead!");
     }
 
     /**
@@ -295,16 +327,18 @@ public class JFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnNew;
+    private javax.swing.JButton btnNewWeek;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> dropdownDay;
     private javax.swing.JComboBox<String> dropdownTime;
     private javax.swing.JTextField inputMeal;
+    private javax.swing.JTextField inputNumber;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelDay;
     private javax.swing.JLabel labelMeal;
+    private javax.swing.JLabel labelNumber;
     private javax.swing.JLabel labelProject;
     private javax.swing.JLabel labelTime;
     private javax.swing.JTextArea textArea;
