@@ -52,6 +52,6 @@ public class Meal {
 
     @Override
     public String toString() {
-        return " No.: " + number + " | Meal: " + meal + " | Day: " + day + " | Time: " + time; 
+        return "\n No.: " + number + " | Meal: " + meal + " | Day: " + day + " | Time: " + time; 
     }    
 }

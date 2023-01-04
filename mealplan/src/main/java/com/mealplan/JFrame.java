@@ -96,7 +96,7 @@ public class JFrame extends javax.swing.JFrame {
         inputMeal.setForeground(new java.awt.Color(51, 51, 51));
         inputMeal.setToolTipText("Input meal name here");
 
-        btnInsert.setBackground(new java.awt.Color(236, 167, 104));
+        btnInsert.setBackground(new java.awt.Color(225, 110, 43));
         btnInsert.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("Insert");
@@ -109,7 +109,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(236, 167, 104));
+        btnDelete.setBackground(new java.awt.Color(225, 110, 43));
         btnDelete.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
@@ -122,7 +122,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(236, 167, 104));
+        btnSearch.setBackground(new java.awt.Color(225, 110, 43));
         btnSearch.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
@@ -135,7 +135,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnNewWeek.setBackground(new java.awt.Color(236, 167, 104));
+        btnNewWeek.setBackground(new java.awt.Color(225, 110, 43));
         btnNewWeek.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnNewWeek.setForeground(new java.awt.Color(255, 255, 255));
         btnNewWeek.setText("New Week");
@@ -262,8 +262,9 @@ public class JFrame extends javax.swing.JFrame {
 
         if (inputNumber.getText().equals("") || inputMeal.getText().equals("") || dropdownDay.getSelectedItem().toString().equals("- Select -") || dropdownTime.getSelectedItem().toString().equals("- Select -")) {
             JOptionPane.showMessageDialog(this, "Please enter all data.");
+        } else if (inputNo > 21) {
+            JOptionPane.showMessageDialog(this, "Invalid number. Insert keys between 1-21 only.");
         } else {
-
             hashT.insert(inputNo, inputMeal.getText(), dropdownDay.getSelectedItem().toString(), dropdownTime.getSelectedItem().toString());
 
             textArea.setText("");
@@ -279,15 +280,25 @@ public class JFrame extends javax.swing.JFrame {
     }
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
-        
+        int inputDel = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number to delete: "));
+
+        hashT.delete(inputDel);
+
+        JOptionPane.showMessageDialog(null, "This entry has been deleted.");
     }
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {
+        int inputFind = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number to search: "));
 
+        Meal result = hashT.find(inputFind);
+
+        JOptionPane.showMessageDialog(null, "Number " + inputFind + " is " + result);
     }
 
     private void btnNewWeekActionPerformed(java.awt.event.ActionEvent evt) {
         hashT.newWeek();
+        textArea.setText("");
+        textArea.append(hashT.display());
 
         JOptionPane.showMessageDialog(null, "Let's plan a new week ahead!");
     }
