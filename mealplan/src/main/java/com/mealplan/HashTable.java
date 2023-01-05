@@ -20,18 +20,7 @@ public class HashTable {
     
     public void insert(int num, String meal, String day, String time) {
         Meal m = new Meal(num, meal, day, time);
-        int modNum = num % SIZE;
-
-        if (mealPlan.containsKey(modNum)) {
-
-            for(int i = 0; i > SIZE; i++) {
-                num = num + 1;
-                modNum = num;
-            }
             mealPlan.put(num, m);
-
-        } else {
-            mealPlan.put(modNum, m);
         }
     }
 
