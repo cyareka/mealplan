@@ -1,0 +1,44 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package com.mealplan {
+    Meal --o HashTable 
+    JFrame ..> HashTable
+
+    class HashTable {
+        - hashArray : ArrayList<Meal>[]
+        - SIZE : int
+        + HashTable()
+        - computeHash(int) : int
+        + find(int) : String
+        + add(int, String, String, String) : void
+        + display() : String
+        + delete(int) : void
+        + newWeek() : void
+        + toString() : String
+    }
+
+    class Meal {
+        - number : int
+        - meal : String
+        - day : String
+        - time : String 
+        + Meal()
+        + Meal(int, String, String, String)
+        + getNumber() : int
+        + getMeal() : String
+        + getDay() : String
+        + getTime() : String
+        + setNumber(int) : void
+        + setMeal(String) : void
+        + setDay(String) : void
+        + setTime(String) : void
+        + equals(Meal) : boolean
+        + toString() : String
+    }
+
+    class JFrame {
+    }
+}
+
+@enduml

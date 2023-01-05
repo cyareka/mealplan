@@ -1,8 +1,9 @@
 @startuml
 skinparam classAttributeIconSize 0
+
 package com.mealplan {
-    Meal -- HashTable
-    HashTable -- JFrame
+    Meal --o HashTable 
+    JFrame ..> HashTable
 
     class HashTable {
         - hashArray : ArrayList<Meal>[]
@@ -37,13 +38,6 @@ package com.mealplan {
     }
 
     class JFrame {
-        + JFrame()
-        + hashT : HashTable
-        - btnInsertActionPerformed(ActionEvent) : void
-        - btnDeleteActionPerformed(ActionEvent) : void
-        - btnSearchActionPerformed(ActionEvent) : void
-        - btnNewWeekActionPerformed(ActionEvent) : void
-        + main(String[])
     }
 }
 
