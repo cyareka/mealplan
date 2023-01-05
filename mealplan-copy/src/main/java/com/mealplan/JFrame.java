@@ -41,6 +41,7 @@ public class JFrame extends javax.swing.JFrame {
         textArea = new javax.swing.JTextArea();
         inputNumber = new javax.swing.JTextField();
         labelNumber = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -57,26 +58,26 @@ public class JFrame extends javax.swing.JFrame {
         setTitle("Meal Plan System");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(22, 19, 15));
 
-        labelProject.setBackground(new java.awt.Color(255, 255, 255));
+        labelProject.setBackground(new java.awt.Color(239, 223, 194));
         labelProject.setFont(new java.awt.Font("Lexend", 0, 30)); // NOI18N
-        labelProject.setForeground(new java.awt.Color(0, 0, 0));
+        labelProject.setForeground(new java.awt.Color(229, 183, 105));
         labelProject.setText("Meal Plan System");
 
         labelMeal.setBackground(new java.awt.Color(255, 255, 255));
         labelMeal.setFont(new java.awt.Font("Lexend", 0, 24)); // NOI18N
-        labelMeal.setForeground(new java.awt.Color(0, 0, 0));
+        labelMeal.setForeground(new java.awt.Color(239, 223, 194));
         labelMeal.setText("Meal");
 
         labelDay.setBackground(new java.awt.Color(255, 255, 255));
         labelDay.setFont(new java.awt.Font("Lexend", 0, 24)); // NOI18N
-        labelDay.setForeground(new java.awt.Color(0, 0, 0));
+        labelDay.setForeground(new java.awt.Color(239, 223, 194));
         labelDay.setText("Day");
 
         labelTime.setBackground(new java.awt.Color(255, 255, 255));
         labelTime.setFont(new java.awt.Font("Lexend", 0, 24)); // NOI18N
-        labelTime.setForeground(new java.awt.Color(0, 0, 0));
+        labelTime.setForeground(new java.awt.Color(239, 223, 194));
         labelTime.setText("Time");
 
         dropdownDay.setBackground(new java.awt.Color(255, 255, 255));
@@ -96,7 +97,7 @@ public class JFrame extends javax.swing.JFrame {
         inputMeal.setForeground(new java.awt.Color(51, 51, 51));
         inputMeal.setToolTipText("Input meal name here");
 
-        btnInsert.setBackground(new java.awt.Color(225, 110, 43));
+        btnInsert.setBackground(new java.awt.Color(105, 118, 93));
         btnInsert.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("Insert");
@@ -109,7 +110,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(225, 110, 43));
+        btnDelete.setBackground(new java.awt.Color(105, 118, 93));
         btnDelete.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
@@ -122,7 +123,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(225, 110, 43));
+        btnSearch.setBackground(new java.awt.Color(105, 118, 93));
         btnSearch.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
@@ -135,7 +136,7 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        btnNewWeek.setBackground(new java.awt.Color(225, 110, 43));
+        btnNewWeek.setBackground(new java.awt.Color(105, 118, 93));
         btnNewWeek.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnNewWeek.setForeground(new java.awt.Color(255, 255, 255));
         btnNewWeek.setText("New Week");
@@ -148,11 +149,12 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        textArea.setBackground(new java.awt.Color(204, 204, 204));
+        textArea.setBackground(new java.awt.Color(229, 239, 242));
         textArea.setColumns(20);
         textArea.setFont(new java.awt.Font("Lexend", 0, 14)); // NOI18N
         textArea.setForeground(new java.awt.Color(51, 51, 51));
         textArea.setRows(5);
+        textArea.setWrapStyleWord(true);
         jScrollPane2.setViewportView(textArea);
 
         inputNumber.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,8 +164,21 @@ public class JFrame extends javax.swing.JFrame {
 
         labelNumber.setBackground(new java.awt.Color(255, 255, 255));
         labelNumber.setFont(new java.awt.Font("Lexend", 0, 24)); // NOI18N
-        labelNumber.setForeground(new java.awt.Color(0, 0, 0));
+        labelNumber.setForeground(new java.awt.Color(239, 223, 194));
         labelNumber.setText("No.");
+
+        jPanel2.setBackground(new java.awt.Color(229, 183, 105));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 25, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -202,15 +217,14 @@ public class JFrame extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnNewWeek, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(labelProject)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
+                        .addGap(171, 171, 171)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(inputNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelNumber))
@@ -238,9 +252,12 @@ public class JFrame extends javax.swing.JFrame {
                             .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnNewWeek, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
+                        .addGap(29, 29, 29)
+                        .addComponent(labelProject)
+                        .addGap(26, 26, 26)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,7 +268,7 @@ public class JFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -289,9 +306,6 @@ public class JFrame extends javax.swing.JFrame {
         textArea.append(hashT.display());
 
         JOptionPane.showMessageDialog(null, "This entry has been deleted.");
-        
-
-
     }
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,6 +366,7 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JTextField inputNumber;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelDay;
     private javax.swing.JLabel labelMeal;

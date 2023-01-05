@@ -1,7 +1,7 @@
 package com.mealplan;
 
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.Iterator;
 
 public class HashTable {
     private ArrayList<Meal>[] hashArray;
@@ -53,11 +53,21 @@ public class HashTable {
     }
 
     public void delete(int num) {
-        int hash  = computeHash(num);
+        int hash = computeHash(num);
+
         ArrayList<Meal> arrList = hashArray[hash];
 
-        for (Meal m : arrList) {
-            arrList.remove(m);
+        if (hash < 0 || hash > SIZE) {
+            System.out.println("Invalid number.");
+        } else {
+            Iterator<Meal> itr = arrList.iterator();
+            while (itr.hasNext()) {
+                Meal m = itr.next();
+                if (hash == m.getNumber()) {
+                    itr.remove();
+                    break;
+                }
+            }
         }
     }
     
