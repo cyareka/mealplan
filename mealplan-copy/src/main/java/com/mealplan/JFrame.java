@@ -317,6 +317,7 @@ public class JFrame extends javax.swing.JFrame {
     }
 
     private void btnNewWeekActionPerformed(java.awt.event.ActionEvent evt) {
+
         hashT.newWeek();
         textArea.setText("");
 
