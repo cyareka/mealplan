@@ -3,18 +3,18 @@ package com.mealplan;
 public class Meal {
     private int number;
     private String meal;
-    public String day;
+    private String day;
     private String time;  
     
     // Default constructor to create null node
-    Meal() {
+    public Meal() {
         meal = "";
         day = "";
         time = "";
     }
      
     // Parameterized constructor
-    Meal(final int intNum, final String strMeal, final String strDay, final String strTime) {
+    public Meal(final int intNum, final String strMeal, final String strDay, final String strTime) {
         number = intNum;
         meal = strMeal;
         day = strDay;
