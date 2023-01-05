@@ -21,7 +21,7 @@ public class HashTable {
     public void insert(int num, String meal, String day, String time) {
         Meal m = new Meal(num, meal, day, time);
             mealPlan.put(num, m);
-        }
+        
     }
 
     public Meal find(int num) {

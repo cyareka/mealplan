@@ -1,3 +1,5 @@
+package com.mealplan;
+
 import java.util.ArrayList;
 
 public class HashTable {
@@ -49,7 +51,7 @@ public class HashTable {
         ArrayList<Meal> arrList = hashArray[hash];
         
         if (arrList.contains(hash)) {
-            arrList.remove();
+            arrList.remove(hash);
         } else {
             System.out.println("Does not exist.");
         }

@@ -1,3 +1,5 @@
+package com.mealplan;
+
 public class Meal {
     private int number;
     private String meal;

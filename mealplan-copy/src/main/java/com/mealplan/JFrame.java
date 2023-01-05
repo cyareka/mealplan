@@ -1,3 +1,5 @@
+package com.mealplan;
+
 import java.awt.event.ActionEvent;
 
 import javax.swing.JOptionPane;
