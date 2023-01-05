@@ -280,14 +280,18 @@ public class JFrame extends javax.swing.JFrame {
     }
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
-        int inputDel = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter number to delete: "));
+    
+       int inputDel = Integer.parseInt(JOptionPane.showInputDialog(null, "Input index to delete: "));
 
         hashT.delete(inputDel);
 
         textArea.setText("");
         textArea.append(hashT.display());
-        
+
         JOptionPane.showMessageDialog(null, "This entry has been deleted.");
+        
+
+
     }
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,7 +305,6 @@ public class JFrame extends javax.swing.JFrame {
     private void btnNewWeekActionPerformed(java.awt.event.ActionEvent evt) {
         hashT.newWeek();
         textArea.setText("");
-        textArea.append(hashT.display());
 
         JOptionPane.showMessageDialog(null, "Let's plan a new week ahead!");
     }

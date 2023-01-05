@@ -8,14 +8,13 @@ public class Meal {
     
     // Default constructor to create null node
     Meal() {
-        number = 0;
         meal = "";
         day = "";
         time = "";
     }
-    
+     
     // Parameterized constructor
-    Meal(int intNum, String strMeal, String strDay, String strTime) {
+    Meal(final int intNum, final String strMeal, final String strDay, final String strTime) {
         number = intNum;
         meal = strMeal;
         day = strDay;
@@ -48,6 +47,11 @@ public class Meal {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public boolean equals(Meal m1) {
+        Meal m2 = (Meal) m1;
+        return m2.number == this.number;
     }
 
     @Override

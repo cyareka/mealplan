@@ -1,10 +1,11 @@
 package com.mealplan;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class HashTable {
     private ArrayList<Meal>[] hashArray;
-    private static final int SIZE = 21;
+    private static int SIZE = 21;
 
     public HashTable() {
         hashArray = (ArrayList<Meal>[]) new ArrayList[SIZE];
@@ -20,6 +21,7 @@ public class HashTable {
 
     public String find(int target) {
         int hash = computeHash(target);
+
         ArrayList<Meal> arrList = hashArray[hash];
 
         for (Meal m : arrList) {
@@ -31,13 +33,18 @@ public class HashTable {
     }
 
     public void add(int num, String meal, String day, String time) {
-        Meal m = new Meal(num, meal, day, time);
+        try {
 
-        int hash = computeHash(num);
-        ArrayList<Meal> arrList = hashArray[hash];
-
-        if (!arrList.contains(m)) {
-            arrList.add(m);
+            Meal m = new Meal(num, meal, day, time);
+    
+            int hash = computeHash(num);
+            ArrayList<Meal> arrList = hashArray[hash];
+    
+            if (!arrList.contains(m)) {
+                arrList.add(m);
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Caught NullPointerException");
         }
     }
 
@@ -46,20 +53,19 @@ public class HashTable {
     }
 
     public void delete(int num) {
-        int hash = computeHash(num);
-    
+        int hash  = computeHash(num);
         ArrayList<Meal> arrList = hashArray[hash];
-        
-        if (arrList.contains(hash)) {
-            arrList.remove(hash);
-        } else {
-            System.out.println("Does not exist.");
-        }
-        
-    }
 
+        for (Meal m : arrList) {
+            arrList.remove(m);
+        }
+    }
+    
     public void newWeek() {
-        
+        for (int i = 0; i < SIZE; i++) {
+            ArrayList<Meal> arrList = hashArray[i];
+            arrList.clear();
+        }
     }
 
     @Override
